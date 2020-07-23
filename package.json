@@ -1,0 +1,20 @@
+{
+  "name": "beet_api",
+  "version": "0.0.1",
+  "description": "schrute's farm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.21"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "prettier": "2.0.5"
+  }
+}
