@@ -26,17 +26,17 @@ My first api, used for a little project at work.
 
 ```markdown
 ## Companies collection [/companies]
-### Create a company [POST]
+### Create company [POST]
 
 ## Companies collection [/companies]
 ### List all companies [GET]
 
-## Get a company by Id [/companies/id]
+## Get company by Id [/companies/id]
 ### Show company info by Id [GET]
 
 ## Edit company by Id [/companies/id]
-### Edit a company info [PUT]
+### Edit company info [PUT]
 
 ## Delete company by Id [/companies/id]
-### Edit a company info [DELETE]
+### Delete company [DELETE]
 ```
