@@ -1,13 +1,22 @@
-// import express, mongoose, mongodb
+// import express, mongoose, mongodb, cors
 const express = require ('express');
 const app = express(); 
 const mongoose = require('mongoose'); 
+const cors = require('cors')
 const { Timestamp, Db, ObjectID, ObjectId } = require('mongodb');
 const { documentSchemaSymbol } = require('mongoose/lib/helpers/symbols');
 
 // model companies.js import
 require ('./models/companies')
 const Companies = mongoose.model('companies'); 
+
+// calls cors policy
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+    app.use(cors());
+    next();  
+});
 
 // connect to localhost at the 8080 port
 app.listen(8080, () => {
