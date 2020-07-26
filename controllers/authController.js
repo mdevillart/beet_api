@@ -26,7 +26,7 @@ router.post('/register', async (req,res) =>{
         user.password = undefined;
         return res.send({
             user,
-            token: generateToken({ id: user.id }), 
+            token: generateToken({ id: user.id, email: user.email, name: user.name }),
         });
     }
     catch (err) {
