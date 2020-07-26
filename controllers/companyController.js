@@ -1,6 +1,9 @@
 const express = require('express');
+const authMiddleware = require('../middlewares/auth');
 const Company = require('../models/company');
 const router = express.Router();
+
+router.use(authMiddleware);
 
 
 router.post('/companies', async (req, res) => {
@@ -8,6 +11,11 @@ router.post('/companies', async (req, res) => {
         const company = await Company.create(req.body);
         return res.status(200).json({
         message: "Company '"+ company._doc.name +"' created",
+        createdByUser: {
+            "userId": req.userId,
+            "userName": req.userName,
+            "userEmail": req.userEmail,
+        },
         createdCompany: {
             "id": company._doc._id, 
             "body": req.body
@@ -51,6 +59,11 @@ router.put('/companies/:id', async (req, res) => {
         const company = await Company.findByIdAndUpdate({ _id: req.params.id}, req.body);
         return res.status(200).json({
             message: "Company usually known as '"+ company._doc.name +"' was edited",
+            editedByUser: {
+                "userId": req.userId,
+                "userName": req.userName,
+                "userEmail": req.userEmail,
+            },
             editedCompany: 
             {
                 "id": company._doc._id,
@@ -70,6 +83,11 @@ router.delete('/companies/:id', async (req, res) => {
         const company = await Company.findByIdAndDelete({ _id: req.params.id});
         return res.status(200).json({
             message: "Company '"+ company._doc.name +"' deleted",
+            deletedByUser: {
+                "userId": req.userId,
+                "userName": req.userName,
+                "userEmail": req.userEmail,
+            },
             deletedCompany: {
                 "id": company._doc._id, 
                 "document": company._doc.document, 

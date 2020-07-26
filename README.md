@@ -23,7 +23,10 @@ My first api, used for a little project at work.
 
 <i>With Mongoose we'll have a translator for the database to JS objects so they can be used by the application.</i>
 
-### 5. Running with *nodemon*
+### 5. Install JSON Web Token
+`npm install jsonwebtoken`
+
+### 6. Running with *nodemon*
 `nodemon app.js`
 
 # Methods
