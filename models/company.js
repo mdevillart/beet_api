@@ -1,19 +1,6 @@
 const mongoose = require ('mongoose'); 
-const { Db, ObjectId } = require('mongodb');
 
-mongoose.plugin((schema) => {
-    schema.options.toJSON = {
-      virtuals: true,
-      timestamps: true,
-      versionKey: false,
-      transform(doc, ret) {
-        ret.id = ret._id;
-        delete ret._id;
-      }
-    };
-  });
-
-const Companies = new mongoose.Schema({
+const CompanySchema = new mongoose.Schema({
     name: {
         type: String, 
         required: true
@@ -215,7 +202,13 @@ const Companies = new mongoose.Schema({
                 }
             }
         }
-    }
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
 });
 
-mongoose.model('companies', Companies);
+const Company = mongoose.model('Company', CompanySchema);  
+
+module.exports = Company;

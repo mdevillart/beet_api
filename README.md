@@ -4,22 +4,26 @@
 My first api, used for a little project at work. 
 
 # START
-### 1. Install NPM
+### 1. Install and run NPM
 `npm install`
+`npn init` -> creates "package.json"
 
-<i>All dependencies from package.json will be installed</i>
+### 2. Install body-parser
+`npm install body-parser`
 
-### 2. Install CORS
-`npm install --save CORS`
+<i>Node.js body parsing middleware.</i>
+
+### 3. Install CORS
+`npm install CORS`
 
 <i>CORS policy</i>
 
-### 3. Install Mongoose
-`npm install --save mongoose`
+### 4. Install Mongoose
+`npm install mongoose`
 
 <i>With Mongoose we'll have a translator for the database to JS objects so they can be used by the application.</i>
 
-### 4. Running with *nodemon*
+### 5. Running with *nodemon*
 `nodemon app.js`
 
 # Methods
