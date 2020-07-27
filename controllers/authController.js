@@ -55,4 +55,25 @@ router.post('/authenticate', async (req, res) =>{
     });
 });
 
+// change this in the future to retrieve pass by email  
+router.delete('/register/:id', async (req, res) => {
+    try {
+        const user = await User.findByIdAndDelete({ _id: req.params.id});
+        return res.status(200).json({
+            message: "User '"+ user._doc.name +"' deleted",
+            deletedUser: {
+                "id": user._doc._id, 
+                "email": user._doc.email, 
+                "createdAt": user._doc.createdAt
+            } 
+        });
+    }
+    catch (err) {
+        return res.status(400).send({
+            error: "The userId '"+ req.params.id +"' couldn't be deleted (it may not exist)",
+        }); 
+    }
+});
+
+
 module.exports = app => app.use('/auth', router);
