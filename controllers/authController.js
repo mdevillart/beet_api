@@ -75,5 +75,17 @@ router.delete('/register/:id', async (req, res) => {
     }
 });
 
+router.get('/register/:id', async (req, res) => {
+    try {
+        const user = await User.findById({ _id: req.params.id });
+        return res.status(200).json({ user });
+    }
+    catch (err) {
+        return res.status(400).send({
+            error: "The userId '"+ req.params.id +"' couldn't be found (it may not exist)",            
+        });
+    }
+});
+
 
 module.exports = app => app.use('/auth', router);
