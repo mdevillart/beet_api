@@ -2,7 +2,7 @@
 const express = require ('express');
 const bodyParser = require('body-parser');
 const app = express(); 
-const cors = require('cors')
+const cors = require('cors');
 
 // database connection to mongodb at db.js import
 require('./database/db');
