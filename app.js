@@ -27,5 +27,6 @@ app.use(bodyParser.urlencoded ({ extended: false }));
 // defines the express use to json
 app.use(express.json()); 
 
+// calls the controllers 
 require('./controllers/authController')(app);
 require('./controllers/companyController')(app);
