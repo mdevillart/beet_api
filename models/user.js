@@ -1,4 +1,4 @@
-const mongoose = require('mongoose'); // for later... does it creates another instance? why can't I call ../database?
+const mongoose = require('mongoose');
 const bcrypt = require ('bcrypt');
 
 const UserSchema = new mongoose.Schema ({
