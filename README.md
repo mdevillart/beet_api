@@ -1,6 +1,6 @@
 # Beet API
 
-The Beet API attends a little project that I needed at work, where we used google sheets to mantain/update info about customers and now we can do it via API using a database. 
+The Beet API attends a little project that I needed at work, where we used google sheets to maintain/update info about customers and now we can do it via API using a database. 
 
 It's my first API and i'm really proud of my progress. 
 For the future, I'd like to use the ejs package to build an interface. 
